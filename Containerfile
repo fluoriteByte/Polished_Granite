@@ -5,7 +5,7 @@ FROM ghcr.io/bootcrew/arch-bootc:latest
 #RUN grep "= */var" /etc/pacman.conf | sed "/= *\/var/s/.*=// ; s/ //" | xargs -n1 sh -c 'mkdir -p "/usr/lib/sysimage/$(dirname $(echo $1 | sed "s@/var/@@"))" && mv -v "$1" "/usr/lib/sysimage/$(echo "$1" | sed "s@/var/@@")"' '' && \
 #    sed -i -e "/= *\/var/ s/^#//" -e "s@= */var@= /usr/lib/sysimage@g" -e "/DownloadUser/d" /etc/pacman.conf
 
-RUN pacman -Sy --noconfirm cosmic \
+RUN pacman -Sy --noconfirm cosmic
 RUN pacman -S --clean --noconfirm
 
 # https://github.com/bootc-dev/bootc/issues/1801
