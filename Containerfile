@@ -1,4 +1,4 @@
-FROM gchr.io/bootcrew/arch-bootc:latest
+FROM ghcr.io/bootcrew/arch-bootc:latest
 # Steal everything from here >:3c
 
 # Move everything from `/var` to `/usr/lib/sysimage` so behavior around pacman remains the same on `bootc usroverlay`'d systems
